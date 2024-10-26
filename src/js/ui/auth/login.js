@@ -1,4 +1,5 @@
 import { login } from "../../api/auth/login";
+import { saveData } from "../../api/storage";
 // import router from "../../router";
 
 /**
@@ -15,9 +16,8 @@ export async function onLogin(e) {
         const userData = await login(data);
         const { accessToken, ...profile } = userData.data;
         
-        console.log(accessToken)
-        console.log(profile)
-
+        saveData('accessToken', accessToken);
+        saveData('profile', profile);
     } catch (error) {
         console.error('Whoops! An error occurred during login: ', error);
     }
