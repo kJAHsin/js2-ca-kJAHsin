@@ -1,3 +1,5 @@
+import { API_AUTH_LOGIN } from "../constants.js";
+
 /**
  * Logs in a user with the provided email and password.
  *
@@ -8,4 +10,28 @@
  * @throws {Error} Error if the login fails.
  */
 
-export async function login({ email, password }) {}
+export async function login({ email, password }) {
+    try {
+        const response = await fetch(API_AUTH_LOGIN, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                email, password,
+            })
+        })
+
+        if (!response.ok) {
+            throw new Error(`Network response was not ok: ${response.status} - ${errorData.message}`);
+        } else {
+            const data = await response.json();
+            console.log("this data has been passed: ", data)
+            return data;
+        }
+
+    } catch (error) {
+        console.error('There was a problem with your login: ', error);
+        throw error;
+    }
+}
