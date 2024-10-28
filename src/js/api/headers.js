@@ -7,6 +7,8 @@ export function headers() {
 
   if (API_KEY) {
     headers.append("X-Noroff-API-Key", API_KEY);
+  } else {
+    console.error('OH NO! No API key added!')
   }
 
   if (accessToken) {
