@@ -1,4 +1,5 @@
-import { API_AUTH_LOGIN } from "../constants.js";
+import { API_AUTH_LOGIN, API_KEY } from "../constants.js";
+import { headers } from "../headers.js";
 
 /**
  * Logs in a user with the provided email and password.
@@ -14,17 +15,15 @@ export async function login({ email, password }) {
     try {
         const response = await fetch(API_AUTH_LOGIN, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
+            headers: headers(),
             body: JSON.stringify({
                 email, password,
-            })
+            }),
         })
 
         if (!response.ok) {
             const errorMsg = await response.json()
-            throw new Error(`Network response was not ok: ${response.status} - ${errorMsg.message}`);
+            throw new Error(`Network response was not ok: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`);
         } else {
             const data = await response.json();
             console.log("this data has been passed to local storage: ", data)
