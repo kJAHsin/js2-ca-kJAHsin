@@ -23,7 +23,8 @@ export async function login({ email, password }) {
         })
 
         if (!response.ok) {
-            throw new Error(`Network response was not ok: ${response.status} - ${errorData.message}`);
+            const errorMsg = await response.json()
+            throw new Error(`Network response was not ok: ${response.status} - ${errorMsg.message}`);
         } else {
             const data = await response.json();
             console.log("this data has been passed: ", data)

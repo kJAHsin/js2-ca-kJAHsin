@@ -25,4 +25,7 @@ dist-ssr
 
 #Custom
 info.md
+<<<<<<< HEAD
 /src/getAPIKey.js
+=======
+>>>>>>> b6c056a (fixed an error with logging out errors)
