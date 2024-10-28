@@ -6,16 +6,18 @@ export function headers() {
   const accessToken = loadData('accessToken');
 
   if (API_KEY) {
-    headers.append("X-Noroff-API-Key", API_KEY);
+    headers.append('X-Noroff-API-Key', API_KEY);
   } else {
     console.error('OH NO! No API key added!')
   }
 
   if (accessToken) {
-    headers.append("Authorization", accessToken);
+    headers.append('Authorization', `Bearer ${accessToken}`);
   } else {
     console.error('WHOOPSIE! No access token present.')
   }
+
+  headers.append('Content-Type', 'application/json')
 
   return headers;
 }
