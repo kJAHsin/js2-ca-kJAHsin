@@ -19,6 +19,7 @@ export async function onLogin(e) {
         saveData('accessToken', accessToken);
         saveData('profile', profile);
 
+        console.log('routing to: /profile/')
         router('/profile/');
     } catch (error) {
         console.error('Whoops! An error occurred during login: ', error);
