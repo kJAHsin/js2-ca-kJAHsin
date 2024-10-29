@@ -48,7 +48,7 @@ export async function register({
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(`Network response was not ok: ${response.status} - ${errorData.message}`);
+      throw new Error(`Network response was not ok: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`);
     }
 
     const data = await response.json();
