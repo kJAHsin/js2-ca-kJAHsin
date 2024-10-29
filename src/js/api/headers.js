@@ -13,8 +13,6 @@ export function headers() {
 
   if (accessToken) {
     headers.append('Authorization', `Bearer ${accessToken}`);
-  } else {
-    console.error('WHOOPSIE! No access token present.')
   }
 
   headers.append('Content-Type', 'application/json')
