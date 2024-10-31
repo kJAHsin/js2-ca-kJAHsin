@@ -1,3 +1,5 @@
+@import url(../_variables.css);
+
 .toast {
     position: fixed;
     inset: calc(0.5rem + 1vw) auto auto 50%;
@@ -6,11 +8,18 @@
     opacity: 1;
     border-radius: 7px;
     font-weight: 600;
-    font-family: system-ui, -apple-system, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: var(--font-fam);
     text-align: center;
     color: white;
 
     animation: toastIn 480ms ease-out;
+
+    &.success {
+        background-color: var(--blue-800);
+    }
+    &.warning {
+        background-color: var(--orange-800);
+    }
 }
 
 @keyframes toastIn {
