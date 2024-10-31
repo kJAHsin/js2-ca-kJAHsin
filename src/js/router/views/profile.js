@@ -12,8 +12,6 @@ const userDataStorage = loadData('profile');
 const {name, email, bio, avatar, banner} = userDataStorage;
 const profileData = {name, email, bio, avatar, banner};
 
-console.log(userDataStorage)
-
 function createProfileHTML() {
     // creating elements
     const pName = document.createElement('h2');
