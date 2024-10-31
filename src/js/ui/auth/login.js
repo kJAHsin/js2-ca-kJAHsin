@@ -19,6 +19,7 @@ export async function onLogin(e) {
         saveData('accessToken', accessToken);
         saveData('profile', profile);
 
+        alert(`You were successfully logged in as ${profile.name}!`);
         router('/profile/');
         window.location.href = '/profile/';
     } catch (error) {
