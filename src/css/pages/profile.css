@@ -1,0 +1,45 @@
+@import url(../_variables.css);
+
+h1 {
+    height: 0;
+}
+
+#profile-info {
+    --left-margin: calc(2rem + 6vw);
+
+    #profile-header {
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        height: calc(300px + 2vw);
+    }
+
+    #profile-avatar {
+        position: absolute;
+        inset: 0;
+        margin: auto auto auto var(--left-margin);
+        height: 8rem;
+        aspect-ratio: 1;
+        border-radius: 100vw;
+        overflow: clip;
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    h2, p {
+        margin: 1rem auto auto var(--left-margin);
+    }
+
+    form[name="updateProfile"] {
+        margin: 2rem auto auto var(--left-margin) !important;
+        width: fit-content;
+
+        button {
+            padding: 0.5rem 1.375rem;
+            border-radius: 7px;
+        }
+    }
+}
+
