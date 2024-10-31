@@ -18,6 +18,7 @@ function createProfileHTML() {
     const pEmail = document.createElement('p');
     const pBio = document.createElement('p');
     const pAvatarImg = document.createElement('img');
+    const updateProfileForm = document.createElement('form');
 
     pName.textContent = profileData.name;
     pEmail.textContent = profileData.email;
@@ -27,10 +28,13 @@ function createProfileHTML() {
     pAvatarImg.src = profileData.avatar.url;
     pAvatarImg.alt = profileData.avatar.alt;
     profileHeader.style.backgroundImage = `url(${profileData.banner.url})`;
+    updateProfileForm.innerHTML = `<button>Update Profile</button>`;
+    updateProfileForm.name = 'updateProfile';
 
     profile.appendChild(pName);
     profile.appendChild(pEmail);
     profile.appendChild(pBio);
+    profile.appendChild(updateProfileForm);
     profileAvatar.appendChild(pAvatarImg);
 }
 
