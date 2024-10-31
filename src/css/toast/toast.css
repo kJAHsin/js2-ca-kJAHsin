@@ -1,0 +1,27 @@
+.toast {
+    position: fixed;
+    inset: calc(0.5rem + 1vw) auto auto 50%;
+    translate: -50%;
+    padding: 1rem 2rem;
+    opacity: 1;
+    border-radius: 7px;
+    font-weight: 600;
+    font-family: system-ui, -apple-system, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    color: white;
+
+    animation: toastIn 480ms ease-out;
+}
+
+@keyframes toastIn {
+    from {
+        translate: -50% -300%;
+    }
+}
+
+@keyframes toastOut {
+    to {
+        translate: -300%;
+        opacity: 0;
+    }
+}
