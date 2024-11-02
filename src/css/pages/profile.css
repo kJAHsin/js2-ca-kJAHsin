@@ -3,8 +3,6 @@ h1 {
 }
 
 #profile-info {
-    --left-margin: calc(2rem + 6vw);
-
     #profile-header {
         background-size: cover;
         background-repeat: no-repeat;
