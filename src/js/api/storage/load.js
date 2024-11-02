@@ -8,7 +8,7 @@ export function loadData(key) {
         ? localStorage 
         : {
             getItem: () => {},
-        }
+        };
     const userData = jsonData.getItem(key);
 
     if (userData) {

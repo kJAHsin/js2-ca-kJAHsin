@@ -19,14 +19,14 @@ export async function login({ email, password }) {
             body: JSON.stringify({
                 email, password,
             }),
-        })
+        });
 
         if (!response.ok) {
-            const errorMsg = await response.json()
+            const errorMsg = await response.json();
             throw new Error(`Network response was not ok: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`);
         } else {
             const data = await response.json();
-            console.log("this data has been passed to local storage: ", data)
+            console.log("this data has been passed to local storage: ", data);
             return data;
         }
 

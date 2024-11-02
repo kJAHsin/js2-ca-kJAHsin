@@ -7,5 +7,5 @@ export function setLogoutListener(el) {
     el.addEventListener('click', (e) => {
         e.preventDefault();
         onLogout();
-    })
-}
+    });
+};
