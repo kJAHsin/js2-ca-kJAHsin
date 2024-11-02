@@ -1,6 +1,5 @@
 import { login } from "../../api/auth/login";
 import { saveData } from "../../api/storage";
-import router from "../../router";
 import { Toast } from "../toast/Toast.js";
 
 /**
@@ -23,9 +22,8 @@ export async function onLogin(e) {
         saveData('profile', profile);
 
         setTimeout(() => {
-            router('/profile/');
             window.location.href = '/profile/';
-        }, 5000);
+        }, 4000);
     } catch (error) {
         console.error('Whoops! An error occurred in the onlogin() function: ', error);
         const toast = new Toast('warning', `Sorry. We couldn't sign you in!`);
