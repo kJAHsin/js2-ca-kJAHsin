@@ -1,0 +1,27 @@
+.btn {
+    --clr-bg: var(--orange-600, rgb(200 100 20));
+
+    padding: 0.75rem 1.75rem;
+    border: var(--border-width) solid var(--clr-bg);
+    font-size: var(--font-link);
+    cursor: pointer;
+    border-radius: var(--border-rad);
+}
+
+.btn.logout-btn {
+    margin: 1rem auto 1rem var(--left-margin);
+    background: linear-gradient(90deg, white 45%, var(--clr-bg) 55%);
+    background-size: 500%;
+    background-position-x: left;
+    transition: background 420ms ease-in, color 125ms ease-out 200ms;
+
+    &:hover,
+    &:focus-visible {
+        background-position-x: right;
+        color: white;
+    }
+
+    &.hidden {
+        display: none;
+    }
+}
