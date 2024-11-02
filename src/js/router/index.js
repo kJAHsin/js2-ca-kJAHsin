@@ -1,6 +1,22 @@
-// This function controls which JavaScript file is loaded on which page
-// In order to add additional pages, you will need to implement them below
-// You may change the behavior or approach of this file if you choose
+/**
+ * Dynamically loads the appropriate JavaScript file based on the current page's pathname.
+ * This function facilitates page-specific script loading in a Vite project,
+ * ensuring only the required scripts are loaded for each route.
+ * 
+ * @param {string} [pathname=window.location.pathname] - The pathname of the current page.
+ * Defaults to the current window's pathname if not provided.
+ * 
+ * @returns {Promise<void>} - A promise that resolves once the necessary module is loaded.
+ * 
+ * @example
+ * // Assuming the user navigates to '/auth/login/'
+ * router(); // Loads the './views/login.js' module for the login page.
+ * 
+ * @example
+ * // Loading a specific route directly
+ * router('/post/create/'); // Loads the './views/postCreate.js' module.
+ */
+
 export default async function router(pathname = window.location.pathname) {
   switch (pathname) {
     case "/":
