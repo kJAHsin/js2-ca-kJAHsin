@@ -1,6 +1,7 @@
 :root {
     /* Font families */
     --font-fam: system-ui, -apple-system, Ubuntu, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --font-link: 1rem;
 
     /* Theme colors */
     --orange-400: rgb(255, 142, 29);
@@ -9,4 +10,9 @@
     --blue-400: rgb(150, 121, 255);
     --blue-600: rgb(91, 46, 255);
     --blue-800: rgb(34, 0, 156);
+
+    /* layout */
+    --left-margin: calc(2rem + 6vw);
+    --border-rad: 7px;
+    --border-width: 3px;
 }
