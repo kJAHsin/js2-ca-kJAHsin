@@ -6,21 +6,33 @@ import { Toast } from "../toast/Toast.js";
  */
 
 export function onLogout() {
-  const storageItems = ["accessToken", "profile"];
+  // stored keys
+  const storageItems = ["profile", "accessToken"];
 
   storageItems.forEach((item) => {
     try {
+      // function that removes keys from localStorage
       clearData(item);
     } catch (err) {
       console.error(
         `The item you are trying to remove is not present: \n\t${item} \n\t${err}`
       );
     }
-    const toast = new Toast('success', 'You were successfully logged out!');
-    toast.toastIt();
+    // check to make sure we are in a browser environment for node testing
+    if (typeof window !== "undefined") {
+      const toast = new Toast("success", "You were successfully logged out!");
+      toast.toastIt();
 
-    setTimeout(() => {
-      window.location.href = '/auth/login/';
-    }, 3000);
+      toast.toastEl.addEventListener(
+        "animationend",
+        function onAnimationEnd(e) {
+          // check to makes sure it is 'toastOut' (the final animation)
+          if (e.animationName === "toastOut") {
+            // change page after short toast animation
+            window.location.href = "/auth/login/";
+          }
+        }
+      );
+    }
   });
 }
