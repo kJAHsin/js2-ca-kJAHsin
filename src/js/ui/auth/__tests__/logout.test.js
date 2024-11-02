@@ -16,7 +16,7 @@ describe("onLogout", () => {
     Object.defineProperty(global, "localStorage", {
       value: localStorageMock,
     });
-    localStorage.setItem("token", "mockedToken");
+    localStorage.setItem("accessToken", "mockedToken");
   });
 
   test("removes token from localStorage", () => {
