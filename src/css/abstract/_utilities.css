@@ -1,0 +1,7 @@
+.wrapper {
+    max-width: 1080px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
