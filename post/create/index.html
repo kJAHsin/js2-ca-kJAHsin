@@ -1,17 +1,30 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Noroff FED2 JS2 CA</title>
-    <script type="module" src="/src/app.js"></script>
-    <link rel="stylesheet" href="../../src/css/style.css">
-  </head>
-  <body>
-    <h1>Create Post</h1>
 
-    <form name="createPost">
-      <button>Create Post</button>
-    </form>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Noroff FED2 JS2 CA</title>
+  <script type="module" src="/src/app.js"></script>
+  <link rel="stylesheet" href="../../src/css/style.css">
+</head>
+
+<body>
+  <h1>Create Post</h1>
+
+  <form class="create-post__form wrapper" name="createPost">
+    <label>Post title:
+      <input type="text" name="title" required maxlength="36" title="Let us know what you're thinking about!"></label>
+    <label>Tags:
+      <input type="text" name="tags"></label>
+    <label>Image URL:
+      <input type="text" name="url"></label>
+    <label>Image alt text:<br><small>recommended</small>
+      <input type="text" name="alt"></label>
+    <label>Post body:
+      <input type="text" name="body"></label>
+    <button>Create Post</button>
+  </form>
+</body>
+
 </html>
