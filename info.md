@@ -8,6 +8,7 @@
 [x] view own profile
 [x] log out user
 [x] create post
+[_] add form HTML to create post
 [_] edit post
 [_] delete post
 [_] get single post (by id)
