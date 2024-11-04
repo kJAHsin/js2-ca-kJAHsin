@@ -40,16 +40,12 @@ export class Toast {
 
     /**
      * Initiates the toast display and removal process.
-     * Plays an exit animation after a delay, then removes the toast from the DOM.
+     * Plays an intro and exit animation after a delay, then removes the toast from the DOM.
      */
     toastIt() {
         this.createToast();
 
-        setTimeout(() => {
-            this.toastEl.style.animation = 'toastOut 880ms ease-out';
-            
-            // Removes the toast after the toastOut animation ends
-            this.toastEl.addEventListener('animationend', () => this.removeToast(), {once: true});
-        }, 3500);
+        // Removes the toast after the toastOut animation ends
+        this.toastEl.addEventListener('animationend', () => this.removeToast(), { once: true });
     }
 }
