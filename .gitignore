@@ -24,8 +24,12 @@ dist-ssr
 *.sw?
 
 #Custom
+<<<<<<< HEAD
 info.md
 <<<<<<< HEAD
 /src/getAPIKey.js
 =======
 >>>>>>> b6c056a (fixed an error with logging out errors)
+=======
+# info.md
+>>>>>>> 57ec907 (commented info.md from .gitignore to aid when switching between machines)
