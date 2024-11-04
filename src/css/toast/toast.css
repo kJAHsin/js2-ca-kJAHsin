@@ -10,7 +10,7 @@
     text-align: center;
     color: white;
 
-    animation: toastIn 480ms ease-out;
+    animation: toast 3480ms ease-out;
 
     &.success {
         background-color: var(--blue-800);
@@ -20,14 +20,22 @@
     }
 }
 
-@keyframes toastIn {
-    from {
+@keyframes toast {
+    0% {
         translate: -50% -300%;
     }
-}
 
-@keyframes toastOut {
-    to {
+    30% {
+        translate: -50% 0;
+        opacity: 1;
+    }
+
+    85% {
+        translate: -45% 0;
+        opacity: 0.7;
+    }
+
+    100% {
         translate: -300%;
         opacity: 0;
     }
