@@ -1,5 +1,5 @@
 import { createPost } from "../../api/post/create.js";
-
+import '../../../css/pages/create-post.css';
 /**
  * Passes data to the createPost function in api/post and handles the response
  */
