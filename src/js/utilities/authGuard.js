@@ -12,8 +12,10 @@ export function authGuard() {
     );
     toast.toastIt();
 
-    setTimeout(() => {
-      window.location.href = "/auth/login/";
-    }, 5000);
+    /* testing picking up the css animation properties */
+    console.log(toast.toastEl.getAnimations());
+
+    toast.toastEl.addEventListener('animationend', () => 
+      window.location.href = '/');
   }
 }
