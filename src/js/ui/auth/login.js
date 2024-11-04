@@ -20,7 +20,6 @@ export async function onLogin(e) {
         
         saveData('accessToken', accessToken);
         saveData('profile', profile);
-
         toast.toastEl.addEventListener('animationend', () => 
             window.location.href = '/profile/'
         );
