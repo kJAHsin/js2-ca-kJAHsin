@@ -7,11 +7,14 @@
 [x] add creds to header
 [x] view own profile
 [x] log out user
-[_] create post
+[x] create post
 [_] edit post
 [_] delete post
 [_] get single post (by id)
 [_] get multiple posts (12 posts)
+
+## Custom
+[_] add toast to create-post, login (check others)
 
 ## Level 2
 [_] emoji reactions
@@ -23,3 +26,7 @@
 [_] search through posts / users
 [_] typescript instead of javascript
 [_] create unit tests for key functions
+
+
+### first post
+>_id: 3888
