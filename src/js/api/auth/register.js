@@ -54,9 +54,9 @@ export async function register({
     const data = await response.json();
     console.log('User registered successfully: ', data);
     return data;
-  } catch (error) {
-    console.error('There was a problem with the registration: ', error);
-    throw error;
+  } catch (err) {
+    console.error('There was a problem with the registration: ', err);
+    throw err;
   }
 
 }
