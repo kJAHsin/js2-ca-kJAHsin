@@ -17,7 +17,8 @@ export async function onRegister(e) {
             // Handle successful registration (e.g., redirect to login page)
             console.log('Registration successful');
             console.log(`User info: ${response}`);
-            router('/auth/login/');
+            // TO DO
+            // Add toast and redirect
         } else {
             // Handle registration failure (e.g., show error message)
             console.error('Registration failed: ', response.message || response);
