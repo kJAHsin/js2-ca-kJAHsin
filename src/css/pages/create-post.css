@@ -1,0 +1,12 @@
+.create-post__form {
+    margin-inline: auto;
+    padding: 1rem;
+    border: var(--border-width) solid var(--blue-800);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    max-width: 900px;
+
+    label {
+        display: inline-block;
+    }
+}
