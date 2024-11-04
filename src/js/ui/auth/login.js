@@ -21,9 +21,10 @@ export async function onLogin(e) {
         saveData('accessToken', accessToken);
         saveData('profile', profile);
 
-        setTimeout(() => {
-            window.location.href = '/profile/';
-        }, 4000);
+        toast.toastEl.addEventListener('animationend', () => 
+            window.location.href = '/profile/'
+        );
+
     } catch (error) {
         console.error('Whoops! An error occurred in the onlogin() function: ', error);
         const toast = new Toast('warning', `Sorry. We couldn't sign you in!`);
