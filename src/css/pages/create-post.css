@@ -3,10 +3,66 @@
     padding: 1rem;
     border: var(--border-width) solid var(--blue-800);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    max-width: 900px;
+    max-width: 400px;
+    gap: 1.25rem;
+    border-radius: var(--border-rad);
 
     label {
-        display: inline-block;
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        align-items: center;
+
+        small {
+            text-align: end;
+            grid-column: 2;
+            height: 0;
+            color: transparent;
+            font-weight: 500;
+            transition: color 280ms ease-out;
+            user-select: none;
+        }
+
+        input {
+            border: var(--border-width) solid var(--blue-800);
+            border-radius: var(--border-rad);
+            line-height: 3;
+            padding-inline: 0.25rem;
+            
+            &:focus + small {
+                color: var(--orange-800);
+            }
+        }
+        
+        textarea {
+            resize: block;
+            border: var(--border-width) solid var(--blue-800);
+            border-radius: var(--border-rad);
+            padding: 0.5rem 0.25rem;
+        }
+        
+        input, textarea {
+            &:hover, &:focus-within {
+                outline: transparent;
+                border-color: var(--blue-400);
+            }
+        }
+    }
+
+    button {
+        padding: 0.75rem 2rem;
+        margin-inline: auto;
+        border: var(--border-width) solid var(--blue-800);
+        border-radius: var(--border-rad);
+        color: white;
+        background: linear-gradient( 85deg, var(--blue-400) 45%, white 55%);
+        background-size: 500%;
+        background-position-x: left;
+        transition: 380ms ease-in-out;
+        cursor: pointer;
+
+        &:hover, &:focus-visible {
+            background-position-x: right;
+            color: var(--blue-800)
+        }
     }
 }
