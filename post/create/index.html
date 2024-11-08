@@ -14,16 +14,18 @@
 
   <form class="create-post__form wrapper" name="createPost">
     <label>Post title:
-      <input type="text" name="title" required maxlength="36" title="Let us know what you're thinking about!"></label>
+      <input type="text" name="title" required maxlength="36" title="Let us know what you're thinking about!">
+      <small>required</small></label>
     <label>Tags:
       <input type="text" name="tags"></label>
     <label>Image URL:
       <input type="text" name="url"></label>
-    <label>Image alt text:<br><small>recommended</small>
-      <input type="text" name="alt"></label>
+    <label>Image alt text:
+      <input type="text" name="alt">
+      <small>recommended</small></label>
     <label>Post body:
-      <input type="text" name="body"></label>
-    <button>Create Post</button>
+      <textarea name="postBody" rows="5" resize="false" maxlength="120" ></textarea></label>
+    <button id="createPost">Create Post</button>
   </form>
 </body>
 
