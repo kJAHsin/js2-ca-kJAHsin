@@ -11,10 +11,10 @@
 body {
   box-sizing: border-box;
   margin: 0;
+  font-family: var(--font-fam);
 }
 
 a {
-  font-family: var(--font-fam);
   color: inherit;
   text-decoration: none;
 }
