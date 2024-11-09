@@ -1,5 +1,5 @@
 .create-post__form {
-    margin-inline: auto;
+    margin: calc(1rem + 3vw) auto auto;
     padding: 1rem;
     border: var(--border-width) solid var(--blue-800);
     display: grid;
