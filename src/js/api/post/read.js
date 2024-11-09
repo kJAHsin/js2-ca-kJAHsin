@@ -1,3 +1,4 @@
+import { API_SOCIAL_POSTS } from '../constants.js'
 /**
  * Reads a single post by its ID.
  *
@@ -5,7 +6,27 @@
  * @returns {Promise<object>} The response data.
  * @throws {Error} If the API request fails.
  */
-export async function readPost(id) {}
+export async function readPost(id) {
+    try {
+        const response = await fetch (API_SOCIAL_POSTS, {
+            method: 'POST',
+			headers: headers(),
+			body: JSON.stringify({id}),
+        })
+        if (!response.ok) {
+			const errorMsg = await response.json()
+			throw new Error(
+				`Network response for fetching post not ok: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`
+			)
+		}
+
+		const data = await response.json()
+		return data
+    } catch (err) {
+        console.error('There was a problem creating your post: ', err)
+		throw err
+    }
+}
 
 /**
  * Reads multiple posts with optional pagination and tagging.
