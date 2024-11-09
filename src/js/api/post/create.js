@@ -41,7 +41,6 @@ export async function createPost({ title, body, tags, media }) {
 		}
 
 		const data = await response.json()
-		console.log('Post created successfully: ', data)
 		return data
 	} catch (err) {
 		console.error('There was a problem creating your post: ', err)
