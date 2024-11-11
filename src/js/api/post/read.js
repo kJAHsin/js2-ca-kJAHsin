@@ -22,7 +22,6 @@ export async function readPost(formData) {
 		}
 
 		const data = await response.json()
-		console.log('from read.js', data.data)
 		return data.data
     } catch (err) {
         console.error('There was a problem fetching this post: ', err)
