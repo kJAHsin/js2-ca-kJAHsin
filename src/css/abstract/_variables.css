@@ -15,4 +15,5 @@
     --left-margin: calc(2rem + 6vw);
     --border-rad: 7px;
     --border-width: 3px;
+    --spacing: calc(0.25rem + 2vw);
 }
