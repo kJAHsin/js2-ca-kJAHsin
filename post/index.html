@@ -13,10 +13,12 @@
 <body>
   <h1>Post Page</h1>
   <form class="search-post__form wrapper" name="searchPost">
-    <label name="post">
+    <label for="postID">
       Search for a post:
-      <input type="search"></label>
+      <input id="postID" name="id" type="text" placeholder="search for a post by id" required></label>
+    <button type="submit" title="search for post">search</button>
   </form>
+  <div id="cards" class="wrapper"></div>
 </body>
 
 </html>
