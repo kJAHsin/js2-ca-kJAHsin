@@ -1,4 +1,6 @@
 import { API_SOCIAL_POSTS } from '../constants.js'
+import { headers } from '../headers.js'
+
 /**
  * Reads a single post by its ID.
  *
@@ -6,12 +8,11 @@ import { API_SOCIAL_POSTS } from '../constants.js'
  * @returns {Promise<object>} The response data.
  * @throws {Error} If the API request fails.
  */
-export async function readPost(id) {
+export async function readPost(formData) {
     try {
-        const response = await fetch (API_SOCIAL_POSTS, {
-            method: 'POST',
+        const response = await fetch (`${API_SOCIAL_POSTS}/${formData.id}?_author=true`, {
+            method: 'GET',
 			headers: headers(),
-			body: JSON.stringify({id}),
         })
         if (!response.ok) {
 			const errorMsg = await response.json()
@@ -21,9 +22,10 @@ export async function readPost(id) {
 		}
 
 		const data = await response.json()
-		return data
+		console.log('from read.js', data.data)
+		return data.data
     } catch (err) {
-        console.error('There was a problem creating your post: ', err)
+        console.error('There was a problem fetching this post: ', err)
 		throw err
     }
 }
