@@ -9,10 +9,9 @@
 [x] log out user
 [x] create post
 [x] add form HTML to create post
-[_] read post
+[x] get single post (by id)
 [_] edit post
 [_] delete post
-[_] get single post (by id)
 [_] get multiple posts (12 posts)
 
 ## Custom
