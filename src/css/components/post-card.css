@@ -1,0 +1,23 @@
+.post-card {
+    display: grid;
+    gap: calc(var(--spacing) / 2);
+    padding: calc(var(--spacing) / 2);
+    border: var(--border-width) solid var(--blue-800);
+    border-radius: var(--border-rad);
+    margin-block: var(--spacing);
+    position: relative;
+    isolation: isolate;
+
+    h2 {
+        max-width: 80%;
+    }
+    p {}
+    img {
+        position: absolute;
+        inset: 0.5rem 0.5rem auto auto;
+        height: 5rem;
+        aspect-ratio: 1;
+        border-radius: 100vw;
+        z-index: -1;
+    }
+}
