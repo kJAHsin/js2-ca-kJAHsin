@@ -15,7 +15,7 @@ import { headers } from '../headers.js'
  * @throws {Error} If the API request fails; includes response details if available.
  * Example: `Network response for creating post not ok: 400 - Bad Request - Title is required`
  */
-export async function createPost({ title, body, tags, media }) {
+export async function createPost({ title, body, tags, mediaUrl, mediaAlt }) {
 	try {
 		const response = await fetch(API_SOCIAL_POSTS, {
 			method: 'POST',
@@ -24,10 +24,10 @@ export async function createPost({ title, body, tags, media }) {
 				...(title && { title }),
 				...(body && { body }),
 				...(tags && { tags: [...tags] }),
-				...(media && {
+				...(mediaUrl && {
 					media: {
-						...(media.url && { url: media.url }),
-						...(media.alt && { alt: media.alt }),
+						...(mediaUrl && { url: mediaUrl }),
+						...(mediaAlt && { alt: mediaAlt }),
 					},
 				}),
 			}),
