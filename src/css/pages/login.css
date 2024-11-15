@@ -1,0 +1,66 @@
+.login-user__form {
+   margin: calc(1rem + 3vw) auto auto;
+   padding: 1rem;
+   border: var(--border-width) solid var(--blue-800);
+   display: grid;
+   max-width: 400px;
+   gap: 1.25rem;
+   border-radius: var(--border-rad);
+
+   label {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      align-items: center;
+
+      input {
+         border: var(--border-width) solid var(--blue-800);
+         border-radius: var(--border-rad);
+         line-height: 3;
+         padding-inline: 0.25rem;
+      }
+
+      input {
+         &:hover,
+         &:focus-within {
+            outline: transparent;
+            border-color: var(--blue-400);
+         }
+      }
+   }
+
+   small {
+      text-align: center;
+
+      a {
+         color: var(--orange-800);
+         text-decoration: underline;
+         text-decoration-color: transparent;
+         text-underline-offset: 3px;
+
+         &:hover,
+         &:focus-visible {
+            text-decoration-color: var(--orange-800);
+         }
+      }
+   }
+
+   button {
+      padding: 0.75rem 2rem;
+      margin-inline: auto;
+      border: var(--border-width) solid var(--blue-800);
+      border-radius: var(--border-rad);
+      color: white;
+      background: linear-gradient(85deg, var(--blue-400) 45%, white 55%);
+      background-size: 500%;
+      background-position-x: left;
+      transition: var(--trans-btn-leave);
+      cursor: pointer;
+
+      &:hover,
+      &:focus-visible {
+         background-position-x: right;
+         color: var(--blue-800);
+         transition: var(--trans-btn-hov);
+      }
+   }
+}
