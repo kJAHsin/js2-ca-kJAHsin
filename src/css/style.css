@@ -1,3 +1,12 @@
 @import url('abstract/_reset.css');
 @import url('abstract/_variables.css');
 @import url('abstract/_utilities.css');
+
+body {
+   header {
+      background-color: var(--orange-400);
+   }
+   &.dark header {
+      background-color: var(--blue-800);
+   }
+}
