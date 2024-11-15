@@ -2,6 +2,7 @@ import { loadData } from '../../api/storage'
 import { authGuard } from '../../utilities/authGuard.js'
 
 authGuard()
+
 if (localStorage.getItem('profile')) {
    // profile template elements
    const profile = document.getElementById('profile-info')
@@ -20,7 +21,7 @@ if (localStorage.getItem('profile')) {
       const pBio = document.createElement('p')
       const pAvatarImg = document.createElement('img')
       const updateProfileForm = document.createElement('form')
-
+      // rendering content
       pName.textContent = profileData.name
       pEmail.textContent = profileData.email
       pBio || pBio !== null
@@ -31,7 +32,7 @@ if (localStorage.getItem('profile')) {
       profileHeader.style.backgroundImage = `url(${profileData.banner.url})`
       updateProfileForm.innerHTML = `<button>Update Profile</button>`
       updateProfileForm.name = 'updateProfile'
-
+      // appending to DOM
       profile.appendChild(pName)
       profile.appendChild(pEmail)
       profile.appendChild(pBio)

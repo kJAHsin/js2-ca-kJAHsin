@@ -1,0 +1,7 @@
+.nav-logo {
+   display: inline-block;
+   height: 4rem;
+   aspect-ratio: 1;
+   background-color: green;
+   border-radius: 100vw;
+}
