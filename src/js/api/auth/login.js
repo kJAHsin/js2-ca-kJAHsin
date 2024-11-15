@@ -1,4 +1,4 @@
-import { API_AUTH_LOGIN, API_KEY } from '../constants.js'
+import { API_AUTH_LOGIN } from '../constants.js'
 import { headers } from '../headers.js'
 
 /**
