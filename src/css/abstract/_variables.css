@@ -1,11 +1,13 @@
-:root {
+body {
    /* Font families */
    --font-fam: system-ui, -apple-system, 'ubuntu', 'Open Sans',
       'Helvetica Neue', sans-serif;
-   --font-link: 1rem;
+   --font-link: 1.125rem;
+   --weight-link: 500;
 
    /* Theme colors */
-   --orange-400: rgb(255 142 29);
+   --bg-light: rgb(255 240 255);
+   --orange-400: rgb(255 186 117);
    --orange-600: rgb(255 128 0);
    --orange-800: rgb(209 104 0);
    --blue-400: rgb(150 121 255);
@@ -13,8 +15,11 @@
    --blue-800: rgb(34 0 156);
 
    /* layout */
-   --left-margin: calc(2rem + 6vw);
    --border-rad: 7px;
    --border-width: 3px;
    --spacing: calc(0.25rem + 2vw);
+
+   /* transition */
+   --trans-btn-hov: background 280ms ease-in, color 100ms ease-out 150ms;
+   --trans-btn-leave: background 120ms ease-in, color 50ms ease-out 50ms;
 }
