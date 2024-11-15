@@ -24,7 +24,6 @@ export function onLogout() {
             'success',
             'You were successfully logged out!',
          )
-         toast.toastIt()
 
          toast.toastEl.addEventListener(
             'animationend',
