@@ -69,7 +69,10 @@ export default class NavBar extends HTMLElement {
 
       if (this.linkArr.length > 0) {
          this.linkArr.forEach((link) => {
-            if (this.isUserLoggedIn === link.auth) {
+            if (
+               this.isUserLoggedIn === link.auth &&
+               link.href !== window.location.pathname
+            ) {
                this.createLink(link, navLinks)
             }
          })
