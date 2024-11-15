@@ -1,41 +1,38 @@
 h1 {
-    height: 0;
+   height: 0;
 }
 
-#profile-info {
-    #profile-header {
-        background-size: cover;
-        background-repeat: no-repeat;
-        position: relative;
-        height: calc(300px + 2vw);
-    }
+.profile-info {
+   padding-block: var(--spacing);
 
-    #profile-avatar {
-        position: absolute;
-        inset: 0;
-        margin: auto auto auto var(--left-margin);
-        height: 8rem;
-        aspect-ratio: 1;
-        border-radius: 100vw;
-        overflow: clip;
+   .profile-header {
+      background-size: cover;
+      background-repeat: no-repeat;
+      position: relative;
+      height: calc(300px + 2vw);
+   }
 
-        img {
-            max-width: 100%;
-        }
-    }
+   .profile-avatar {
+      position: absolute;
+      inset: 0;
+      margin: auto auto auto var(--left-margin);
+      height: 8rem;
+      aspect-ratio: 1;
+      border-radius: 100vw;
+      overflow: clip;
 
-    h2, p {
-        margin: 1rem auto auto var(--left-margin);
-    }
+      img {
+         max-width: 100%;
+      }
+   }
 
-    form[name="updateProfile"] {
-        margin: 2rem auto auto var(--left-margin) !important;
-        width: fit-content;
+   form[name='updateProfile'] {
+      margin: 2rem auto auto var(--left-margin) !important;
+      width: fit-content;
 
-        button {
-            padding: 0.5rem 1.375rem;
-            border-radius: 7px;
-        }
-    }
+      button {
+         padding: 0.5rem 1.375rem;
+         border-radius: 7px;
+      }
+   }
 }
-
