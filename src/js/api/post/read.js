@@ -9,24 +9,28 @@ import { headers } from '../headers.js'
  * @throws {Error} If the API request fails.
  */
 export async function readPost(formData) {
-    try {
-        const response = await fetch (`${API_SOCIAL_POSTS}/${formData.id}?_author=true`, {
+   try {
+      const response = await fetch(
+         `${API_SOCIAL_POSTS}/${formData.id}?_author=true`,
+         {
             method: 'GET',
-			headers: headers(),
-        })
-        if (!response.ok) {
-			const errorMsg = await response.json()
-			throw new Error(
-				`Network response for fetching post not ok: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`
-			)
-		}
+            headers: headers(),
+         },
+      )
+      if (!response.ok) {
+         const errorMsg = await response.json()
+         throw new Error(
+            `Network response for fetching post not ok: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`,
+         )
+      }
 
-		const data = await response.json()
-		return data.data
-    } catch (err) {
-        console.error('There was a problem fetching this post: ', err)
-		throw err
-    }
+      const data = await response.json()
+      console.log(data)
+      return data
+   } catch (err) {
+      console.error('There was a problem fetching this post: ', err)
+      throw err
+   }
 }
 
 /**
@@ -50,4 +54,9 @@ export async function readPosts(limit = 12, page = 1, tag) {}
  * @returns {Promise<object>} Object with data and meta fields.
  * @throws {Error} If the API request fails.
  */
-export async function readPostsByUser(username, limit = 12, page = 1, tag) {}
+export async function readPostsByUser(
+   username,
+   limit = 12,
+   page = 1,
+   tag,
+) {}
