@@ -1,1 +1,8 @@
 @import url('../components/post-card.css');
+
+.cards {
+   display: grid;
+   gap: 0;
+   padding-inline: var(--spacing);
+   margin-bottom: 2rem;
+}
