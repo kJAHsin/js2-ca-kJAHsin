@@ -1,4 +1,4 @@
-import { API_SOCIAL_POSTS } from '../constants.js'
+import { API_SOCIAL_POSTS, API_SOCIAL_PROFILES } from '../constants.js'
 import { headers } from '../headers.js'
 
 /**
@@ -42,7 +42,30 @@ export async function readPost(formData) {
  * @returns {Promise<Object>} An object containing an array of posts in the `data` field, and information in a `meta` field.
  * @throws {Error} If the API request fails.
  */
-export async function readPosts(limit = 12, page = 1, tag) {}
+export async function readPosts(limit = 12, page = 1, tag) {
+   try {
+      const response = await fetch(
+         `${API_SOCIAL_POSTS}?limit=${limit}&page=${page}&_tag=${tag}`,
+         {
+            method: 'GET',
+            headers: headers(),
+         },
+      )
+      if (!response.ok) {
+         const errorMsg = await response.json()
+         throw new Error(
+            `Network response for fetching posts was not cool man: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`,
+         )
+      }
+
+      const data = await response.json()
+      console.log(data)
+      return data
+   } catch (err) {
+      console.error('There was a problem fetching these posts: ', err)
+      throw err
+   }
+}
 
 /**
  * Reads multiple posts by a specific user with optional pagination and tagging.
@@ -59,4 +82,30 @@ export async function readPostsByUser(
    limit = 12,
    page = 1,
    tag,
-) {}
+) {
+   try {
+      const response = await fetch(
+         `${API_SOCIAL_PROFILES}/${username}/POST?limit=${limit}&page=${page}&_tag=${tag}`,
+         {
+            method: 'GET',
+            headers: headers(),
+         },
+      )
+      if (!response.ok) {
+         const errorMsg = await response.json()
+         throw new Error(
+            `Network response for fetching posts from ${username} was not cool man: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`,
+         )
+      }
+
+      const data = await response.json()
+      console.log(data)
+      return data
+   } catch (err) {
+      console.error(
+         'There was a problem fetching posts from this user: ',
+         err,
+      )
+      throw err
+   }
+}
