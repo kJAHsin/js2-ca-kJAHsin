@@ -5,19 +5,20 @@
 [x] register new user
 [x] log in user
 [x] store logged in user creds in local storage
-[x] add creds to header
+[x] add creds to headers
 [x] view own profile
 [x] log out user
 [x] create post
 [x] add form HTML to create post
 [x] get single post (by id)
-[_] edit post
-[_] delete post
+[x] edit post
+[x] delete post
 [x] get multiple posts (12 posts)
 
 ## Custom
 
-[_] add toast to create-post, login (check others)
+[x] add toast to create-post, login (check others)
+[_] make UI => shiny
 
 ## Level 2
 
