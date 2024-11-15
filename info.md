@@ -1,6 +1,7 @@
 # Stories Checklist:
 
 ## Level 1
+
 [x] register new user
 [x] log in user
 [x] store logged in user creds in local storage
@@ -12,12 +13,14 @@
 [x] get single post (by id)
 [_] edit post
 [_] delete post
-[_] get multiple posts (12 posts)
+[x] get multiple posts (12 posts)
 
 ## Custom
+
 [_] add toast to create-post, login (check others)
 
 ## Level 2
+
 [_] emoji reactions
 [_] comment on post
 [_] reply to post
@@ -28,6 +31,6 @@
 [_] typescript instead of javascript
 [_] create unit tests for key functions
 
-
 ### first post
->_id: 3888
+
+> \_id: 3888
