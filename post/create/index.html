@@ -10,8 +10,10 @@
 </head>
 
 <body>
-  <h1>Create Post</h1>
-  <skinny-navbar></skinny-navbar>
+  <header>
+    <h1 class="page-title">Create Post</h1>
+    <skinny-navbar class="wrapper"></skinny-navbar>
+  </header>
   <form class="create-post__form wrapper" name="createPost">
     <label>Post title:
       <input type="text" name="title" required maxlength="36" title="Let us know what you're thinking about!">
@@ -27,7 +29,6 @@
       <textarea name="body" rows="5" resize="false" maxlength="120"></textarea></label>
     <button id="createPost">Create Post</button>
   </form>
-  <logout-button></logout-button>
 </body>
 
 </html>
