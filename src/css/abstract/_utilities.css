@@ -1,7 +1,17 @@
 .wrapper {
-    max-width: 1080px;
-    margin-inline: auto;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+   max-width: 1080px;
+   margin-inline: auto;
+   display: flex;
+   align-items: center;
+   gap: 0.5rem;
+}
+
+h1.page-title {
+   user-select: none;
+   pointer-events: none;
+   position: absolute;
+   color: transparent;
+   height: 0;
+   width: 0;
+   overflow: clip;
 }
