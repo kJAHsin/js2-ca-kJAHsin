@@ -15,8 +15,9 @@ export async function deletePost(id) {
          headers: headers(),
       })
       if (!response.ok) {
+         const errorMsg = response.json()
          throw new Error(
-            `Error deleting post: (status: ok = ${response.ok})`,
+            `Error deleting post: (status: ok = ${response.ok}) - ${errorMsg.status} - ${errorMsg.errors[0].message}`,
          )
       }
 
