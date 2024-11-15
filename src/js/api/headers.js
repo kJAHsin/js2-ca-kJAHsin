@@ -1,21 +1,22 @@
-import { API_KEY } from "./constants.js";
-import { loadData } from "./storage/load.js";
+import { API_KEY } from './constants.js'
+import { loadData } from './storage/load.js'
 
-export function headers() {
-  const headers = new Headers();
-  const accessToken = loadData('accessToken');
+const accessToken = loadData('accessToken')
 
-  if (API_KEY) {
-    headers.append('X-Noroff-API-Key', API_KEY);
-  } else {
-    console.error('OH NO! No API key added!');
-  }
+export function headers(key = API_KEY, token = accessToken) {
+   const headers = new Headers()
 
-  if (accessToken) {
-    headers.append('Authorization', `Bearer ${accessToken}`);
-  }
+   if (key && key !== '') {
+      headers.append('X-Noroff-API-Key', key)
+   } else {
+      console.error('OH NO! API key is just an empty string!')
+   }
 
-  headers.append('Content-Type', 'application/json');
+   if (token) {
+      headers.append('Authorization', `Bearer ${token}`)
+   }
 
-  return headers;
+   headers.append('Content-Type', 'application/json')
+
+   return headers
 }
