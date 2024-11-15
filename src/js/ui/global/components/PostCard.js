@@ -20,7 +20,7 @@ export class PostCard {
    renderCard() {
       const cardContainer = document.getElementById('cards')
       const card = document.createElement('div')
-      card.className = 'post-card wrapper'
+      card.className = 'post-card'
       this.createCard(card)
       cardContainer.appendChild(card)
    }
