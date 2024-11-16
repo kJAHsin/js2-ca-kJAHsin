@@ -7,28 +7,28 @@ import '../../../css/pages/create-post.css'
  */
 
 export async function onCreatePost(e) {
-	e.preventDefault()
+   e.preventDefault()
 
-	const formData = new FormData(e.target)
-	const data = Object.fromEntries(formData.entries())
+   const formData = new FormData(e.target)
+   const data = Object.fromEntries(formData.entries())
 
-	try {
-		const response = await createPost(data)
-		if (response) {
-			// Handle successful creation of post
-			const toast = new Toast(
-				'success',
-				`Way to go! You created the post ${response.data.title} with id ${response.data.id}`
-			)
-				saveData('most-recent-post', response.data.id)
-			toast.toastIt()
+   try {
+      const response = await createPost(data)
+      if (response) {
+         // Handle successful creation of post
+         const toast = new Toast(
+            'success',
+            `Way to go! You created the post ${response.data.title} with id ${response.data.id}`,
+         )
+         saveData('most-recent-post', response.data.id)
 
-			toast.toastEl.addEventListener(
-				'animationend',
-				() => (window.location.href = '/profile/')
-			)
-		}
-	} catch (err) {
-		console.error('Could not create post', err)
-	}
+         toast.toastEl.addEventListener(
+            'animationend',
+            () => (window.location.href = '/profile/'),
+         )
+      }
+   } catch (err) {
+      console.error('Could not create post', err)
+      new Toast('warning', 'Ooops!<br>Could not create post...')
+   }
 }

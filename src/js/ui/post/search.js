@@ -17,7 +17,6 @@ export async function onSearchPost(e) {
             'success',
             `Way to go! You found the post ${title}`,
          )
-         toast.toastIt()
          const card = new PostCard(author, id, title, body, media)
          card.renderCard()
       }

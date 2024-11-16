@@ -28,11 +28,7 @@ export function onLogout() {
          toast.toastEl.addEventListener(
             'animationend',
             function onAnimationEnd(e) {
-               // check to makes sure it is 'toastOut' (the final animation)
-               if (e.animationName === 'toastOut') {
-                  // change page after short toast animation
-                  window.location.href = '/auth/login/'
-               }
+               window.location.href = '/auth/login/'
             },
          )
       }

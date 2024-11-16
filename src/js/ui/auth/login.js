@@ -32,6 +32,6 @@ export async function onLogin(e) {
          'Whoops! An error occurred in the onlogin() function: ',
          error,
       )
-      const toast = new Toast('warning', `Sorry. We couldn't sign you in!`)
+      new Toast('warning', `Sorry. We couldn't sign you in!`)
    }
 }
