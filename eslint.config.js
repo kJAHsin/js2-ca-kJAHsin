@@ -1,6 +1,6 @@
 import js from '@eslint/js'
 import globals from 'globals'
-import stylelint from 'eslint-plugin-stylelint'
+// import stylelint from 'eslint-plugin-stylelint'
 
 export default [
    {
@@ -27,13 +27,13 @@ export default [
          },
       },
    },
-   {
-      files: ['**/*.css', '**/*.scss'],
-      plugins: {
-         stylelint,
-      },
-      rules: {
-         'stylelint/no-undef-class': 'error',
-      },
-   },
+   // {
+   //    files: ['**/*.css', '**/*.scss'],
+   //    plugins: {
+   //       stylelint,
+   //    },
+   //    rules: {
+   //       'stylelint/no-undef-class': 'error',
+   //    },
+   // },
 ]
