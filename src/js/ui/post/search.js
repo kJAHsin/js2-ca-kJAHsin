@@ -13,10 +13,7 @@ export async function onSearchPost(e) {
       if (response) {
          const { author, body, id, media, title } = response.data
          // Handle successful creation of post
-         const toast = new Toast(
-            'success',
-            `Way to go! You found the post ${title}`,
-         )
+         new Toast('success', `Way to go! You found the post ${title}`)
          const card = new PostCard(author, id, title, body, media)
          card.renderCard()
       }
