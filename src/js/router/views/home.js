@@ -4,7 +4,7 @@ const profileLink = document.getElementById('profileLink')
 
 const token = loadData('accessToken')
 
-if (!token) {
+if (!token && profileLink) {
    profileLink.ariaDisabled = true
    profileLink.classList.add('disabled')
 }
