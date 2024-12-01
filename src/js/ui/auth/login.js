@@ -9,6 +9,7 @@ import '../../../css/pages/login.css'
 
 export async function onLogin(e) {
    e.preventDefault()
+   console.log('default prevented')
 
    const formData = new FormData(e.target)
    const data = Object.fromEntries(formData.entries())
