@@ -26,7 +26,7 @@ export async function onCreatePost(e) {
 
          toast.toastEl.addEventListener(
             'animationend',
-            () => (window.location.href = '/profile/'),
+            () => (window.location.href = '/post/'),
          )
       }
    } catch (err) {
