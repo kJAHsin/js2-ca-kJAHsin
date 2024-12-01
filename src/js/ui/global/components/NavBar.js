@@ -1,5 +1,12 @@
+/**
+ * internal dependencies
+ */
 import { loadData } from '../../../api/storage/load.js'
 
+/**
+ * A custom element
+ * generates a navbar for use on all pages
+ */
 export default class NavBar extends HTMLElement {
    constructor(linkArr) {
       super()
@@ -58,7 +65,10 @@ export default class NavBar extends HTMLElement {
       this.clickableLogo(logo)
    }
 
-   //   import stylesheet
+   /**
+    * generates stylesheet for use in the shadow dom
+    * @returns {HTMLStyleElement}
+    */
    getStyleSheet() {
       const style = document.createElement('style')
       style.textContent = `

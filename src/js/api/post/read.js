@@ -1,5 +1,6 @@
 import { API_SOCIAL_POSTS, API_SOCIAL_PROFILES } from '../constants.js'
 import { headers } from '../headers.js'
+import { Toast } from '../../ui/toast/Toast.js'
 
 /**
  * Reads a single post by its ID.
@@ -19,6 +20,7 @@ export async function readPost(formData) {
       )
       if (!response.ok) {
          const errorMsg = await response.json()
+         new Toast('warning', `Ah... beans. ${errorMsg.errors[0].message}`)
          throw new Error(
             `Network response for fetching post not ok: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`,
          )

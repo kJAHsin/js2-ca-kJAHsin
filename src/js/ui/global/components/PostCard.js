@@ -1,3 +1,8 @@
+/**
+ * creates a card for each post
+ *
+ * @class
+ */
 export class PostCard {
    constructor(
       author,

@@ -1,11 +1,22 @@
+/**
+ * internal dependencies
+ */
 import { loadData } from '../../../api/storage/load.js'
 import { setLogoutListener } from '../logout.js'
 
+/**
+ * A custom element
+ * Logout Button that handles logic of logging out user
+ */
 export class LogoutButton extends HTMLElement {
    constructor() {
       super()
    }
 
+   /**
+    * Sets up the shadow DOM, creates the logout button, attaches a
+    * stylesheet, sets a logout listener, and checks if the user is logged in.
+    */
    connectedCallback() {
       const shadow = this.attachShadow({ mode: 'open' })
       const button = document.createElement('button')
@@ -13,7 +24,9 @@ export class LogoutButton extends HTMLElement {
       button.className = 'btn logout-btn'
       button.innerText = 'Log out'
 
-      // attaching stylesheet
+      /**
+       * css stylesheet
+       */
       const style = this.getStyleSheet()
 
       shadow.appendChild(style)
@@ -22,7 +35,9 @@ export class LogoutButton extends HTMLElement {
       this.checkLoggedin(button)
    }
 
-   // attach listener for logout function
+   /**
+    * sets listeners on button elements
+    */
    setListener() {
       const btn = this.shadowRoot.getElementById('logOutBtn')
 
@@ -31,7 +46,10 @@ export class LogoutButton extends HTMLElement {
       }
    }
 
-   //   import stylesheet
+   /**
+    * generates stylesheet for use in the shadow dom
+    * @returns {HTMLStyleElement}
+    */
    getStyleSheet() {
       const style = document.createElement('style')
       style.textContent = `
@@ -124,7 +142,12 @@ export class LogoutButton extends HTMLElement {
       return style
    }
 
-   //   check if user is logged in and show log out button if so
+   /**
+    *  Check if user is logged in and show log out button if so
+    *  Hides the logout button if the user is not logged in
+    *
+    * @param {HTMLElement} el
+    * */
    checkLoggedin(el) {
       const token = loadData('accessToken')
 
