@@ -15,10 +15,10 @@
 
    img {
       position: absolute;
-      inset: 0.5rem 0.5rem auto auto;
-      height: 5rem;
+      inset: 10% 0.5rem auto auto;
+      height: 80%;
       aspect-ratio: 1;
       border-radius: 100vw;
-      z-index: -1;
+      object-fit: cover;
    }
 }
