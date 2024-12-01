@@ -1,6 +1,6 @@
-import { onSearchPost } from "../../ui/post/search.js"
+import { onSearchPost } from '../../ui/post/search.js'
 import '../../../css/pages/post.css'
 
-const form = document.forms.searchPost;
+const form = document.forms.searchPost
 
-form.addEventListener("submit", onSearchPost);
+form.addEventListener('submit', onSearchPost)
