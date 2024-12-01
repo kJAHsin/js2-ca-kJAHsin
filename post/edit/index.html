@@ -16,7 +16,21 @@
     <skinny-navbar class="wrapper"></skinny-navbar>
   </header>
   <form name="editPost">
-    <button>Edit Post</button>
+    <label>Post id:
+      <input type="number" name="id" required></label>
+    <label>Post title:
+      <input type="text" name="title" maxlength="36" title="Let us know what you're thinking about!">
+      <small>required</small></label>
+    <label>Tags:
+      <input type="text" name="tags"></label>
+    <label>Image URL:
+      <input type="text" name="mediaUrl"></label>
+    <label>Image alt text:
+      <input type="text" name="mediaAlt">
+      <small>recommended</small></label>
+    <label>Post body:
+      <textarea name="body" rows="5" resize="false" maxlength="120"></textarea></label>
+    <button type="submit" id="editPost">Edit Post</button>
   </form>
 </body>
 
