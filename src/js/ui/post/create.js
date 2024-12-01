@@ -4,6 +4,8 @@ import { saveData } from '../../api/storage/save.js'
 import '../../../css/pages/create-post.css'
 /**
  * Passes data to the createPost function in api/post and handles the response
+ *
+ * @param {Event} e to prevent default form submission
  */
 
 export async function onCreatePost(e) {

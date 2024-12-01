@@ -15,35 +15,47 @@ import { headers } from '../headers.js'
  * @throws {Error} If the API request fails; includes response details if available.
  * Example: `Network response for creating post not ok: 400 - Bad Request - Title is required`
  */
-export async function createPost({ title, body, tags, mediaUrl, mediaAlt }) {
-	try {
-		const response = await fetch(API_SOCIAL_POSTS, {
-			method: 'POST',
-			headers: headers(),
-			body: JSON.stringify({
-				...(title && { title }),
-				...(body && { body }),
-				...(tags && { tags: [...tags] }),
-				...(mediaUrl && {
-					media: {
-						...(mediaUrl && { url: mediaUrl }),
-						...(mediaAlt && { alt: mediaAlt }),
-					},
-				}),
-			}),
-		})
+export async function createPost({
+   title,
+   body,
+   tags,
+   mediaUrl,
+   mediaAlt,
+}) {
+   try {
+      /**
+       * splitting tags into array
+       */
+      const tagsArr = tags.split(',').map((tag) => tag.trim())
+      console.log(tagsArr)
 
-		if (!response.ok) {
-			const errorMsg = await response.json()
-			throw new Error(
-				`Network response for creating post not ok: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`
-			)
-		}
+      const response = await fetch(API_SOCIAL_POSTS, {
+         method: 'POST',
+         headers: headers(),
+         body: JSON.stringify({
+            ...(title && { title }),
+            ...(body && { body }),
+            ...(tags && { tags: tagsArr }),
+            ...(mediaUrl && {
+               media: {
+                  ...(mediaUrl && { url: mediaUrl }),
+                  ...(mediaAlt && { alt: mediaAlt }),
+               },
+            }),
+         }),
+      })
 
-		const data = await response.json()
-		return data
-	} catch (err) {
-		console.error('There was a problem creating your post: ', err)
-		throw err
-	}
+      if (!response.ok) {
+         const errorMsg = await response.json()
+         throw new Error(
+            `Network response for creating post not ok: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`,
+         )
+      }
+
+      const data = await response.json()
+      return data
+   } catch (err) {
+      console.error('There was a problem creating your post: ', err)
+      throw err
+   }
 }
