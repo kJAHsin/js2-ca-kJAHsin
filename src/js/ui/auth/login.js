@@ -5,11 +5,13 @@ import '../../../css/pages/login.css'
 
 /**
  * This function should pass data to the login function in api/auth and handle the response
+ *
+ * @param {Event} e grabbing event to prevent default action
  */
 
 export async function onLogin(e) {
+   console.log('/ui/login.js was loaded')
    e.preventDefault()
-   console.log('default prevented')
 
    const formData = new FormData(e.target)
    const data = Object.fromEntries(formData.entries())

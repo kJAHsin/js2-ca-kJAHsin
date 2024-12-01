@@ -12,6 +12,8 @@ import { headers } from '../headers.js'
  */
 
 export async function login({ email, password }) {
+   console.log('/api/login.js has been loaded!')
+
    try {
       const response = await fetch(API_AUTH_LOGIN, {
          method: 'POST',
