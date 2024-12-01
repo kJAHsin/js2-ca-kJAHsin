@@ -15,22 +15,19 @@
 [x] delete post
 [x] get multiple posts (12 posts)
 
+## UI implements
+
+[x] register user
+[x] login user
+[x] get single post
+[x] create post
+[_] edit post
+[_] delete post
+
 ## Custom
 
 [x] add toast to create-post, login (check others)
 [_] make UI => shiny
-
-## Level 2
-
-[_] emoji reactions
-[_] comment on post
-[_] reply to post
-[_] follow button
-[_] unfollow button
-[_] pagination on returned posts
-[_] search through posts / users
-[_] typescript instead of javascript
-[_] create unit tests for key functions
 
 ### first post
 
