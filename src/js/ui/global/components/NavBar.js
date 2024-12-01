@@ -13,6 +13,12 @@ export default class NavBar extends HTMLElement {
             auth: true,
          },
          {
+            name: 'Posts',
+            href: '/post/',
+            id: 'postLink',
+            auth: true,
+         },
+         {
             name: 'Login',
             href: '/auth/login/',
             id: 'loginLink',
