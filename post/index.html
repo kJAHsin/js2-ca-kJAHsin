@@ -22,8 +22,16 @@
     <button type="submit" title="search for post">search by id</button>
     <a href="/post/create/" class="btn">create post</a>
     <a href="/post/edit/" class="btn">edit post</a>
+    <button type="button" id="open-delete-modal" title="delete a post by id">delete a post</button>
   </form>
   <div id="cards" class="cards wrapper"></div>
+  <div id="delete-modal" class="delete-modal">
+    <form class="delete-post__form" name="deletePost">
+      <label for="delete-post">
+        <input id="delete-post" name="id" type="number" placeholder="id to delete" required></label>
+      <button type="submit">delete this post</button>
+    </form>
+  </div>
 </body>
 
 </html>
