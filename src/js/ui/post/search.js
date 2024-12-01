@@ -1,6 +1,7 @@
 import { readPost } from '../../api/post/read.js'
 import { PostCard } from '../global/components/PostCard.js'
 import { Toast } from '../toast/Toast.js'
+import '../../../css/pages/post.css'
 
 export async function onSearchPost(e) {
    e.preventDefault()
