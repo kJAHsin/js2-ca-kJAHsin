@@ -54,11 +54,12 @@ export default class NavBar extends HTMLElement {
 
    //   import stylesheet
    getStyleSheet() {
-      const link = document.createElement('link')
-      link.setAttribute('rel', 'stylesheet')
-      link.setAttribute('href', '/src/css/components/NavBar.css')
+      const style = document.createElement('style')
+      style.textContent = `
+      @import url('/src/css/components/NavBar.css');
+      `
 
-      return link
+      return style
    }
 
    createNavigation(parent) {
