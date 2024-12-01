@@ -58,7 +58,6 @@ export default class NavBar extends HTMLElement {
       style.textContent = `
       @import url('/src/css/components/NavBar.css');
       `
-
       return style
    }
 

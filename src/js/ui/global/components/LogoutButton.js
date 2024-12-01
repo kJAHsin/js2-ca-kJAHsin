@@ -33,14 +33,11 @@ export class LogoutButton extends HTMLElement {
 
    //   import stylesheet
    getStyleSheet() {
-      const link = document.createElement('link')
-      link.setAttribute('rel', 'stylesheet')
-      link.setAttribute(
-         'href',
-         '../../src/css/components/LogoutButton.css',
-      )
-
-      return link
+      const style = document.createElement('style')
+      style.textContent = `
+      @import url('/src/css/components/LogoutButton.css');
+      `
+      return style
    }
 
    //   check if user is logged in and show log out button if so
