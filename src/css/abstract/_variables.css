@@ -1,4 +1,4 @@
-body {
+:root {
    /* Font families */
    --font-fam: system-ui, -apple-system, 'ubuntu', 'Open Sans',
       'Helvetica Neue', sans-serif;
