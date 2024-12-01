@@ -56,7 +56,7 @@ export default class NavBar extends HTMLElement {
    getStyleSheet() {
       const link = document.createElement('link')
       link.setAttribute('rel', 'stylesheet')
-      link.setAttribute('href', '../../src/css/components/NavBar.css')
+      link.setAttribute('href', '/src/css/components/NavBar.css')
 
       return link
    }
