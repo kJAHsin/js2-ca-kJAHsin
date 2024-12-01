@@ -1,6 +1,9 @@
 import { onSearchPost } from '../../ui/post/search.js'
 import { onDeletePost } from '../../ui/post/delete.js'
+import { authGuard } from '../../utilities/authGuard.js'
 import '../../../css/pages/post.css'
+
+authGuard()
 
 const form = document.forms.searchPost
 const deleteForm = document.forms.deletePost
