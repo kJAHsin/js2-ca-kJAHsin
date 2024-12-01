@@ -10,7 +10,6 @@ import '../../../css/pages/login.css'
  */
 
 export async function onLogin(e) {
-   console.log('/ui/login.js was loaded')
    e.preventDefault()
 
    const formData = new FormData(e.target)

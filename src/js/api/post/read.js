@@ -25,7 +25,6 @@ export async function readPost(formData) {
       }
 
       const data = await response.json()
-      console.log(data)
       return data
    } catch (err) {
       console.error('There was a problem fetching this post: ', err)
@@ -59,7 +58,6 @@ export async function readPosts(limit = 12, page = 1, tag) {
       }
 
       const data = await response.json()
-      console.log(data)
       return data
    } catch (err) {
       console.error('There was a problem fetching these posts: ', err)
@@ -99,7 +97,6 @@ export async function readPostsByUser(
       }
 
       const data = await response.json()
-      console.log(data)
       return data
    } catch (err) {
       console.error(

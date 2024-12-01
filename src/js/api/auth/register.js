@@ -1,4 +1,4 @@
-import { API_AUTH_REGISTER } from "../constants.js";
+import { API_AUTH_REGISTER } from '../constants.js'
 
 /**
  * Registers a new user with the provided details.
@@ -21,42 +21,42 @@ import { API_AUTH_REGISTER } from "../constants.js";
  * @returns {Promise<Object>} A promise that resolves to the user's registration response.
  */
 export async function register({
-  name,
-  email,
-  password,
-  bio,
-  avatar,
-  banner,
-  venueManager,
+   name,
+   email,
+   password,
+   bio,
+   avatar,
+   banner,
+   venueManager,
 }) {
-  try {
-    const response = await fetch(API_AUTH_REGISTER, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        name,
-        email,
-        password,
-        ...(bio && { bio }),
-        ...(avatar && { avatar }),
-        ...(banner && { banner }),
-        ...(venueManager !== undefined && { venueManager }),
-      }),
-    });
+   try {
+      const response = await fetch(API_AUTH_REGISTER, {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+         body: JSON.stringify({
+            name,
+            email,
+            password,
+            ...(bio && { bio }),
+            ...(avatar && { avatar }),
+            ...(banner && { banner }),
+            ...(venueManager !== undefined && { venueManager }),
+         }),
+      })
 
-    if (!response.ok) {
-      const errorMsg = await response.json();
-      throw new Error(`Network response was not ok: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`);
-    }
+      if (!response.ok) {
+         const errorMsg = await response.json()
+         throw new Error(
+            `Network response was not ok: ${response.status} - ${errorMsg.status} - ${errorMsg.errors[0].message}`,
+         )
+      }
 
-    const data = await response.json();
-    console.log('User registered successfully: ', data);
-    return data;
-  } catch (err) {
-    console.error('There was a problem with the registration: ', err);
-    throw err;
-  }
-
+      const data = await response.json()
+      return data
+   } catch (err) {
+      console.error('There was a problem with the registration: ', err)
+      throw err
+   }
 }

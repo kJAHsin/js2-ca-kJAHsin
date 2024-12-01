@@ -20,8 +20,6 @@ export async function deletePost(id) {
             `Error deleting post: (status: ok = ${response.ok}) - ${errorMsg.status} - ${errorMsg.errors[0].message}`,
          )
       }
-
-      console.log(response)
       return response
    } catch (err) {
       console.error('There was a problem deleting this post: ', err)

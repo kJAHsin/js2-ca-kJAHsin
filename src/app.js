@@ -5,5 +5,4 @@ import './js/ui/global/components/NavBar.js'
 
 window.addEventListener('load', async () => {
    await router(window.location.pathname)
-   console.log('router has run!')
 })

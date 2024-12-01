@@ -29,7 +29,6 @@ export async function createPost({
       function getTagsArr() {
          if (tags !== undefined) {
             const tagsArr = tags.split(',').map((tag) => tag.trim())
-            console.log(tagsArr)
             return tagsArr
          }
          return undefined

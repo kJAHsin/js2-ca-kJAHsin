@@ -15,8 +15,6 @@ export async function onRegister(e) {
       const response = await register(data)
       if (response) {
          // Handle successful registration (e.g., redirect to login page)
-         console.log('Registration successful')
-         console.log(`User info: ${response}`)
          const toast = new Toast(
             'success',
             'You were successfully registered!',
