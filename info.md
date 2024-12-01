@@ -21,13 +21,13 @@
 [x] login user
 [x] get single post
 [x] create post
-[_] edit post
-[_] delete post
+[x] edit post
+[x] delete post
 
 ## Custom
 
 [x] add toast to create-post, login (check others)
-[_] make UI => shiny
+[ ] make UI => shiny
 
 ### first post
 
