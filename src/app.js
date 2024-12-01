@@ -3,4 +3,7 @@ import router from './js/router'
 import './js/ui/global/components/LogoutButton.js'
 import './js/ui/global/components/NavBar.js'
 
-await router(window.location.pathname)
+window.addEventListener('load', async () => {
+   await router(window.location.pathname)
+   console.log('router has run!')
+})
