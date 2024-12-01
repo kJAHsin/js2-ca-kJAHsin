@@ -26,8 +26,14 @@ export async function createPost({
       /**
        * splitting tags into array
        */
-      const tagsArr = tags.split(',').map((tag) => tag.trim())
-      console.log(tagsArr)
+      function getTagsArr() {
+         if (tags !== undefined) {
+            const tagsArr = tags.split(',').map((tag) => tag.trim())
+            console.log(tagsArr)
+            return tagsArr
+         }
+         return undefined
+      }
 
       const response = await fetch(API_SOCIAL_POSTS, {
          method: 'POST',
@@ -35,7 +41,7 @@ export async function createPost({
          body: JSON.stringify({
             ...(title && { title }),
             ...(body && { body }),
-            ...(tags && { tags: tagsArr }),
+            ...(tags && { tags: () => getTagsArr() }),
             ...(mediaUrl && {
                media: {
                   ...(mediaUrl && { url: mediaUrl }),
